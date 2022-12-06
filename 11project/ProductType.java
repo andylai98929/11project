@@ -3,8 +3,6 @@ import java.util.Objects;
 public class ProductType implements Comparable{
     private String type;
 
-    private Product product;
-
     public ProductType(String type) {
         this.type = type;
     }
