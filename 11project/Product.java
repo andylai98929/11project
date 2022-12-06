@@ -25,12 +25,6 @@ public class Product implements Comparable{
         this.totalQuantity = totalQuantity;
     }
 
-    public double getRevenue(SalesChannel salesChannel){
-        int quantity = salesChannel.totalQuantity();
-        this.setRevenue(quantity*unitPrice);
-        return this.revenue;
-    }
-
     public String getName() {
         return name;
     }
@@ -57,7 +51,9 @@ public class Product implements Comparable{
     }
 
     public double getRevenue() {
-        return revenue;
+        int quantity = this.salesChannel.totalQuantity();
+        this.setRevenue(quantity*unitPrice);
+        return this.revenue;
     }
 
     public int getTotalQuantity() {
