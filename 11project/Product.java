@@ -6,6 +6,8 @@ public class Product implements Comparable{
     private double revenue;
     private int totalQuantity;
 
+    private ProductType productType;
+
     private SalesChannel salesChannel;
 
     public Product(String name, double unitPrice) {
@@ -75,11 +77,19 @@ public class Product implements Comparable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Double.compare(product.unitPrice, unitPrice) == 0 && Double.compare(product.revenue, revenue) == 0 && totalQuantity == product.totalQuantity && Objects.equals(name, product.name) && Objects.equals(salesChannel, product.salesChannel);
+        return Double.compare(product.unitPrice, unitPrice) == 0 && Double.compare(product.revenue, revenue) == 0 && totalQuantity == product.totalQuantity && Objects.equals(name, product.name) && Objects.equals(productType, product.productType) && Objects.equals(salesChannel, product.salesChannel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, unitPrice, revenue, totalQuantity, salesChannel);
+        return Objects.hash(name, unitPrice, revenue, totalQuantity, productType, salesChannel);
+    }
+
+    public ProductType getProductType() {
+        return productType;
+    }
+
+    public void setProductType(ProductType productType) {
+        this.productType = productType;
     }
 }
