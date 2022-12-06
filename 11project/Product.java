@@ -45,10 +45,16 @@ public class Product implements Comparable{
         this.revenue = revenue;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
+//    @Override
+//    public int compareTo(Product o) {
+//        if (this.revenue<o.revenue){
+//            return -1;
+//        } else if (this.revenue>o.revenue) {
+//            return 1;
+//        }else {
+//            return 0;
+//        }
+//    }
 
     public double getRevenue() {
         int quantity = this.salesChannel.totalQuantity();
@@ -87,5 +93,10 @@ public class Product implements Comparable{
 
     public void setProductType(ProductType productType) {
         this.productType = productType;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
